@@ -155,5 +155,30 @@ class CalculatorTest {
     //        if(screen.endsWith(".0")) screen = screen.substring(0,screen.length()-2);
     //        if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
     //    }
+    //Test 3
+    @Test
+    @DisplayName("should display the two functions of the Clear button and Clear Entry button ")
+    void testSaveClear(){
+        Calculator calc = new Calculator();
+        calc.pressDigitKey(9);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(2);
+        calc.pressEqualsKey();
+        calc.pressClearKey();
+        calc.pressClearKey();
+        calc.pressDigitKey(2);
+        calc.pressDigitKey(0);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(2);
+        calc.pressDigitKey(0);
+        calc.pressClearKey();
+        calc.pressDigitKey(4);
+        calc.pressEqualsKey();
+
+        String expected = "80";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
 
