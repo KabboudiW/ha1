@@ -129,5 +129,31 @@ class CalculatorTest {
     // Fehler 2:Es berechnet nur das Ergebnis zweier gegebener Zahlen und das Zwischenergebnis kann das Programm nicht berechnen.
     //Wenn wir die Equalskey drücken und dann eine Binaryoperationkey drücken, kommt es zu einem Überschreiben und einem falschen Ergebnis.
     //TODO hier weitere Tests erstellen
+    //Bugfix 1 : Um das Problem zu lösen, dass das aktuelle Zwischenergebnis nicht direkt angezeigt wird, habe ich eine if-Funktion und den Ausdruck
+    // „!latestOperation.isEmpty()“ hinzugefügt, um zu prüfen, ob es nicht leer ist. Anschließend wird die Klasse pressEqualsKey() aufgerufen,
+    // um das Zwischenergebnis direkt anzugeben.
+    //      public void pressBinaryOperationKey(String operation)  {{
+    //            if (!latestOperation.isEmpty()) {
+    //                pressEqualsKey();
+    //            }
+    //            latestValue = Double.parseDouble(screen);
+    //            latestOperation = operation;
+    //        }}
+    // Bugfix 2 :Um das Überschreibungsproblem zu lösen, verwenden wir nacheinander einen Equalskey und einen Binaryoperationkey. Ich habe die Variable „The LatestOperation“ der Klasse „PressEqualsKey()“ mit  „LatestOperation="“;“ gelöscht.
+    // Jetzt werden bei jedem Drücken einer Equalskey alle vorherigen Vorgänge gelöscht und nur das Ergebnis bleibt übrig.
+    //public void pressEqualsKey() {
+    //        var result = switch(latestOperation) {
+    //            case "+" -> latestValue + Double.parseDouble(screen);
+    //            case "-" -> latestValue - Double.parseDouble(screen);
+    //            case "x" -> latestValue * Double.parseDouble(screen);
+    //            case "/" -> latestValue / Double.parseDouble(screen);
+    //            default -> throw new IllegalArgumentException();
+    //        };
+    //        screen = Double.toString(result);
+    //        latestOperation= "";
+    //        if(screen.equals("Infinity")) screen = "Error";
+    //        if(screen.endsWith(".0")) screen = screen.substring(0,screen.length()-2);
+    //        if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
+    //    }
 }
 
