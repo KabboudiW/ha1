@@ -102,8 +102,32 @@ class CalculatorTest {
         String actual = calc.readScreen();
         assertEquals(expected, actual);
     }
+    //Test 2
+    @Test
+    @DisplayName("should display the precedent result after Pressing an Operation key")
+    void testBinaryOperationKey() {
+        Calculator calc = new Calculator();
+        calc.pressDigitKey(1);
+        calc.pressDigitKey(0);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(1);
+        calc.pressDigitKey(0);
+        calc.pressEqualsKey();
+        calc.pressBinaryOperationKey("/");
+        calc.pressDigitKey(2);
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("-");
+        calc.pressDigitKey(2);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("+");
+        String expected = "7";
+        String actual = calc.readScreen();
 
-
+        assertEquals(expected, actual);
+    }
+    // Fehler 2:Es berechnet nur das Ergebnis zweier gegebener Zahlen und das Zwischenergebnis kann das Programm nicht berechnen.
+    //Wenn wir die Equalskey drücken und dann eine Binaryoperationkey drücken, kommt es zu einem Überschreiben und einem falschen Ergebnis.
     //TODO hier weitere Tests erstellen
 }
 
