@@ -180,5 +180,22 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+    // Fehler 1: Die Clear-Funktion löscht immer alle Einträge und setzt alles auf 0 zurück.
+    // Bug fix Erstellen Sie einen Zähler für die Anzahl der Klicks auf die Löschtaste und stellen Sie sicher,
+    // dass die Löschfunktion zwei Funktionen hat: eine zum Löschen der auf dem Bildschirm angezeigten Nummer und die zweite zum Zurücksetzen auf 0
+    //private int clearPressCount = 0; // Counter to track the number of times the clear key is pressed
+
+    //public void pressClearKey() {
+     //   clearPressCount++;
+
+     //   if (clearPressCount == 1) {
+     //       screen = "0"; // Clear the screen only
+     //   } else {
+     //       screen = "0";
+     //       latestOperation = "";
+     //       latestValue = 0.0;
+      //      clearPressCount = 0; // Reset the counter
+      //  }}}
+
 }
 

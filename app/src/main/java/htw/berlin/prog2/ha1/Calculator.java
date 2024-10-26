@@ -49,6 +49,17 @@ public class Calculator {
         latestOperation = "";
         latestValue = 0.0;
     }
+    //public void pressClearKey() {
+    //   clearPressCount++;
+
+    //   if (clearPressCount == 1) {
+    //       screen = "0"; // Clear the screen only
+    //   } else {
+    //       screen = "0";
+    //       latestOperation = "";
+    //       latestValue = 0.0;
+    //      clearPressCount = 0; // Reset the counter
+    //  }}}
 
     /**
      * Empfängt den Wert einer gedrückten binären Operationstaste, also eine der vier Operationen
